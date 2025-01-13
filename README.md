@@ -2,13 +2,29 @@
 
 A comprehensive guide for configuring port forwarding on the Huawei 5G CPE Pro 2 router to achieve Open NAT Type.
 
+<style>
+.rtl {
+    direction: rtl;
+    text-align: right;
+    unicode-bidi: bidi-override;
+}
+</style>
+
 ## Table of Contents
-- [Prerequisites](#prerequisites)
-- [English Guide](#steps-in-english)
-- [Arabic Guide (الدليل بالعربي)](#الخطوات-بالعربي)
-- [Troubleshooting](#troubleshooting)
-- [Security Considerations](#security-considerations)
-- [Contact & Support](#contact--support)
+- [Huawei 5G CPE Pro 2 Port Forwarding Guide](#huawei-5g-cpe-pro-2-port-forwarding-guide)
+  - [Table of Contents](#table-of-contents)
+  - [Prerequisites](#prerequisites)
+  - [Steps in English](#steps-in-english)
+    - [1. Router Access](#1-router-access)
+    - [2. Configure Static IP](#2-configure-static-ip)
+    - [3. Security Settings](#3-security-settings)
+    - [4. Port Forwarding](#4-port-forwarding)
+    - [5. DMZ Configuration](#5-dmz-configuration)
+    - [6. UPnP Settings](#6-upnp-settings)
+  - [Troubleshooting](#troubleshooting)
+  - [Security Considerations](#security-considerations)
+  - [Contact \& Support](#contact--support)
+    - [Search Keywords](#search-keywords)
 
 ## Prerequisites
 - Huawei 5G CPE Pro 2 router
@@ -57,46 +73,73 @@ A comprehensive guide for configuring port forwarding on the Huawei 5G CPE Pro 2
 
 Your NAT Type should now be Open!
 
-<div dir="rtl">
+---
 
-## الخطوات بالعربي
+<h2 id="arabic-guide" class="rtl">الدليل بالعربي</h2>
 
-### ١. الدخول للراوتر
-- افتح صفحة إدارة المودم على الرابط [http://192.168.8.1/](http://192.168.8.1/)
-- سجل دخول باستخدام كلمة المرور الموجودة أسفل المودم
-![Login](https://raw.githubusercontent.com/Mo9a7i/huawei-5g-cpe-pro-2-port-forwarding/main/assets/images/login.png)
+<div class="rtl">
 
-### ٢. تثبيت عنوان IP
-1. اذهب إلى **Advanced** ← **Router / DHCP**
-2. في قسم *IP and MAC Address Binding List*، قم بتعيين IP ثابت لجهازك
-3. احفظ هذا العنوان لأنك ستحتاجه لاحقاً
-![DHCP](https://raw.githubusercontent.com/Mo9a7i/huawei-5g-cpe-pro-2-port-forwarding/main/assets/images/dhcp.png)
+<h3>١. الدخول للراوتر</h3>
+<ul>
+<li>افتح صفحة إدارة المودم على الرابط <a href="http://192.168.8.1/">http://192.168.8.1/</a></li>
+<li>سجل دخول باستخدام كلمة المرور الموجودة أسفل المودم</li>
+</ul>
 
-### ٣. إعدادات الأمان
-1. اذهب إلى **Security / Firewall**
-2. قم بتعطيل جدار الحماية
-   > ⚠️ تحذير: تعطيل جدار الحماية يقلل من أمان شبكتك
-![Firewall](https://raw.githubusercontent.com/Mo9a7i/huawei-5g-cpe-pro-2-port-forwarding/main/assets/images/firewall.png)
+<p><img src="https://raw.githubusercontent.com/Mo9a7i/huawei-5g-cpe-pro-2-port-forwarding/main/assets/images/login.png" alt="Login"></p>
 
-### ٤. توجيه المنافذ
-1. انتقل إلى **Security / Virtual Server**
-2. أضف قواعد توجيه المنافذ لجهازك:
-   - أدخل المنافذ التي تريد فتحها
-   - وجهها إلى عنوان IP الثابت لجهازك
-![Virtual Server](https://raw.githubusercontent.com/Mo9a7i/huawei-5g-cpe-pro-2-port-forwarding/main/assets/images/virtual.png)
+<h3>٢. تثبيت عنوان IP</h3>
+<ol>
+<li>اذهب إلى <strong>Advanced</strong> ← <strong>Router / DHCP</strong></li>
+<li>في قسم <em>IP and MAC Address Binding List</em>، قم بتعيين IP ثابت لجهازك</li>
+<li>احفظ هذا العنوان لأنك ستحتاجه لاحقاً</li>
+</ol>
 
-### ٥. إعدادات DMZ
-1. اذهب إلى **Security / DMZ Settings**
-2. فعّل DMZ ووجهه لعنوان IP جهازك
-   > ⚠️ تحذير: تفعيل DMZ يعرض جهازك لجميع الاتصالات الواردة
-![DMZ](https://raw.githubusercontent.com/Mo9a7i/huawei-5g-cpe-pro-2-port-forwarding/main/assets/images/dmz.png)
+<p><img src="https://raw.githubusercontent.com/Mo9a7i/huawei-5g-cpe-pro-2-port-forwarding/main/assets/images/dhcp.png" alt="DHCP"></p>
 
-### ٦. إعدادات UPnP
-1. انتقل إلى **Security / UPnP Settings**
-2. قم بتفعيل UPnP
-![UPNP](https://raw.githubusercontent.com/Mo9a7i/huawei-5g-cpe-pro-2-port-forwarding/main/assets/images/upnp.png)
+<h3>٣. إعدادات الأمان</h3>
+<ol>
+<li>اذهب إلى <strong>Security / Firewall</strong></li>
+<li>قم بتعطيل جدار الحماية</li>
+</ol>
+<blockquote>
+<p>⚠️ تحذير: تعطيل جدار الحماية يقلل من أمان شبكتك</p>
+</blockquote>
 
-الآن يجب أن يكون نوع NAT مفتوحاً!
+<p><img src="https://raw.githubusercontent.com/Mo9a7i/huawei-5g-cpe-pro-2-port-forwarding/main/assets/images/firewall.png" alt="Firewall"></p>
+
+<h3>٤. توجيه المنافذ</h3>
+<ol>
+<li>انتقل إلى <strong>Security / Virtual Server</strong></li>
+<li>أضف قواعد توجيه المنافذ لجهازك:
+<ul>
+<li>أدخل المنافذ التي تريد فتحها</li>
+<li>وجهها إلى عنوان IP الثابت لجهازك</li>
+</ul>
+</li>
+</ol>
+
+<p><img src="https://raw.githubusercontent.com/Mo9a7i/huawei-5g-cpe-pro-2-port-forwarding/main/assets/images/virtual.png" alt="Virtual Server"></p>
+
+<h3>٥. إعدادات DMZ</h3>
+<ol>
+<li>اذهب إلى <strong>Security / DMZ Settings</strong></li>
+<li>فعّل DMZ ووجهه لعنوان IP جهازك</li>
+</ol>
+<blockquote>
+<p>⚠️ تحذير: تفعيل DMZ يعرض جهازك لجميع الاتصالات الواردة</p>
+</blockquote>
+
+<p><img src="https://raw.githubusercontent.com/Mo9a7i/huawei-5g-cpe-pro-2-port-forwarding/main/assets/images/dmz.png" alt="DMZ"></p>
+
+<h3>٦. إعدادات UPnP</h3>
+<ol>
+<li>انتقل إلى <strong>Security / UPnP Settings</strong></li>
+<li>قم بتفعيل UPnP</li>
+</ol>
+
+<p><img src="https://raw.githubusercontent.com/Mo9a7i/huawei-5g-cpe-pro-2-port-forwarding/main/assets/images/upnp.png" alt="UPNP"></p>
+
+<p>الآن يجب أن يكون نوع NAT مفتوحاً!</p>
 
 </div>
 
